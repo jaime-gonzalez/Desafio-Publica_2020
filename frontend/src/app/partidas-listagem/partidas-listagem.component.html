@@ -1,0 +1,44 @@
+<h2>Lista de Partidas</h2>
+
+<form>
+    <p>
+        Placar: <input type = number name="placar" max = 999 min = 0 [(ngModel)]="partida.placar">
+        <button type = "button" (click)="cadastrar()">Cadastrar</button>
+    </p>
+</form>
+
+
+<hr>
+<section>
+    <table border ="3">
+        <thead>
+            <tr>
+                <th>Jogo</th>
+                <th>Placar</th>
+                <th>Mínimo da <br>Temporada</th>
+                <th>Máximo da <br>Temporada</th>
+                <th>Recorde <br>Mín</th>
+                <th>Recorde <br>Máx</th>
+            </tr>
+        </thead>
+
+
+
+        <tbody *ngFor="let c of partidas">
+            <tr>
+                <td width = "40" height = "40">{{c.jogo}}</td>
+
+                <td width = "40" height = "40">{{c.placar}}</td>
+
+                <td width = "40" height = "40">{{c.minimoTemporada}}</td>
+
+                <td width = "40" height = "40">{{c.maximoTemporada}}</td>
+                
+                <td width = "40" height = "40">{{c.quebraRecordeMinimo}}</td>
+            
+                <td width = "40" height = "40">{{c.quebraRecordeMaximo}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+</section>
